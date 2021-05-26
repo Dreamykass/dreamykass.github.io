@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="section content">
+    <h1 class="title has-text-light">
+        {{ section.title }}
+    </h1>
+</section>
+
+<section class="section content">
+    <ul>
+        {% for page in section.pages %}
+        <li>
+            [{{ page.date }}] <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock content %}

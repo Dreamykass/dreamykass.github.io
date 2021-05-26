@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="section">
+    <h1 class="title" style="color: coral">Hello, I'm Dreamykass</h1>
+</section>
+<div class="container">
+    <div class="columns">
+        <!-- ------------------------------------------------------- first column -->
+        <div class="column has-background-black-ter has-text-light">
+            <section class="section content">
+                <h1 class="title has-text-light">
+                    self: Self
+                </h1>
+
+                {% set page = get_page(path="about-me.md") %}
+                {{ page.content | safe }}
+            </section>
+        </div>
+        <!-- ------------------------------------------------------- second column -->
+        <div class="column has-background-black-ter has-text-light">
+            <section class="section content">
+                <h1 class="title has-text-light">
+                    #[projects]
+                </h1>
+
+                <p>
+                    {% set page = get_page(path="projects.md") %}
+                    {{ page.content | safe }}
+                </p>
+            </section>
+        </div>
+        <!-- ------------------------------------------------------- third column -->
+        <div class="column has-background-black-ter has-text-light">
+            <section class="section content">
+                <h1 class="title has-text-light">
+                    $dev_blog
+                </h1>
+
+                <p>
+                    {% set page = get_page(path="blog-description.md") %}
+                    {{ page.content | safe }}
+                </p>
+
+                <section class="section content">
+                    {% set section = get_section(path="blog/_index.md") %}
+
+                    <a href="{{ section.permalink | safe }}">All blog posts. </a>
+                    Recent posts:
+                    <ul>
+                        {% for page in section.pages %}
+                        <li>
+                            <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </section>
+            </section>
+        </div>
+        <!-- ------------------------------------------------------- ... -->
+    </div>
+</div>
+{% endblock content %}
