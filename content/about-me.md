@@ -6,7 +6,7 @@ with different languages and technologies, as I'm still pretty early in my
 programming adventure.
 
 \
-I'm currently studying informatics/comp-sci.
+I'm currently studying informatics/comp-sci, in 2021 finishing the fourth year.
 
 \
 My favorite techs and langs are, in order 
